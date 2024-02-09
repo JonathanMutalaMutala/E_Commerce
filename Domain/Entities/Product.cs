@@ -8,11 +8,13 @@ namespace Domain.Entities
 {
     public class Product : BaseEntity 
     {
-        public string ProductId { get; set; }
+        public int id { get; set; }
 
-        public string ProductName { get; set; }
+        public string? ProductName { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
+
+        public decimal? Price { get; set; }
 
         public bool IsActive { get; set; }
     }
