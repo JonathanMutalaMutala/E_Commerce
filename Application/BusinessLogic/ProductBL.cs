@@ -1,7 +1,6 @@
 ﻿using Domain.Contracts;
 using Domain.Entities;
-using Domain.Interfaces;
-using Domain.Services;
+using Domain.InterfacesRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Interfaces
+namespace Domain.InterfacesRepository
 {
-    public  interface IProductRepository
+    public interface IProductRepository
     {
         Product GetById(int id);
         IEnumerable<Product> GetAll();
