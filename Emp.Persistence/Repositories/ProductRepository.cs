@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.InterfacesRepository;
+using Emp.Persistence.DatabaseContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +11,45 @@ namespace Emp.Persistence.Repositories
 {
     public class ProductRepository : IProductRepository
     {
+        public readonly EcommerceContext _context; 
+
+        public ProductRepository(EcommerceContext context)
+        {
+            _context = context;
+        }
+
+
         public void Add(Product product)
         {
-            throw new NotImplementedException();
+           _context.Add(product);
+
+          _context.SaveChanges();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            Product? currentProduct = this.GetById(id);
+
+            currentProduct.IsActive = false;
+            _context.Update(currentProduct);
+
+            _context.SaveChanges();
         }
 
         public IEnumerable<Product> GetAll()
         {
-            throw new NotImplementedException();
+           return _context.Products.ToList();
         }
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+           return _context.Products.First(p => p.Id == id);
         }
 
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            _context.Update(product);
+            _context.SaveChanges();
         }
     }
 }
