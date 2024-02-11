@@ -1,4 +1,5 @@
-﻿using Domain.Contracts;
+﻿using Application.Contracts.Persistence;
+using Application.Dtos;
 using Domain.Entities;
 using Domain.InterfacesRepository;
 using System;
@@ -18,13 +19,14 @@ namespace Application.BusinessLogic
             _productRepository = productRepository;
         }
 
-        /// <summary>
-        /// Methode permettant d'ajouter un produit
-        /// </summary>
-        /// <param name="product"></param>
-        public void AddProduct(Product product)
+        public void AddProduct(ProductDto product)
         {
-            _productRepository.Add(product);
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProduct(ProductDto product)
+        {
+            throw new NotImplementedException();
         }
     }
 }
