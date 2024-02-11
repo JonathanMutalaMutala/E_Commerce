@@ -12,6 +12,6 @@ namespace Application.Contracts.Persistence
     {
         void AddProduct(ProductDto product);
         void UpdateProduct(ProductDto product);
-        
+        ProductDto GetSingleProduct(int id); 
     }
 }
