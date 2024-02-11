@@ -8,7 +8,7 @@ namespace Domain.Entities
 {
     public class Product : BaseEntity 
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string? ProductName { get; set; }
 
@@ -17,5 +17,7 @@ namespace Domain.Entities
         public decimal? Price { get; set; }
 
         public bool IsActive { get; set; }
+
+        public decimal Rating { get; set; }
     }
 }

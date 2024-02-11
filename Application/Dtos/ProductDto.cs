@@ -15,5 +15,7 @@ namespace Application.Dtos
         public decimal? Price { get; set; }
 
         public bool IsActive { get; set; }
+
+        public decimal Rating { get; set; }
     }
 }
