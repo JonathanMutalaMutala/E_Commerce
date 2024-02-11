@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using Application.BusinessLogic;
+using Application.Contracts.Persistence;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,9 @@ namespace Application
                 configuration.RegisterServicesFromAssembly(assembly));
 
             services.AddValidatorsFromAssembly(assembly);
+
+            // Ajout des Service pour le DInjection
+            services.AddScoped<IProductService, ProductBL>();
 
             return services;
         }

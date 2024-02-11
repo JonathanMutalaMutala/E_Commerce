@@ -1,10 +1,11 @@
 using Application.Extensions;
+using Emp.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddApplicationServices();
-builder.Services.
+builder.Services.AddPersistenceServices(builder.Configuration);
 
 
 builder.Services.AddControllers();
