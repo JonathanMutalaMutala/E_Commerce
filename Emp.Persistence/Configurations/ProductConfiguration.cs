@@ -21,6 +21,15 @@ namespace Emp.Persistence.Configurations
                 ProductName = "Apple", 
                 Price = 1200,
                 Rating = 4.6m,
+            },
+            new Product
+            {
+                Id = 2, 
+                Description = "Samsung S10",
+                ProductName = "Samsung",
+                Price = 1300,
+                Rating = 4.2m,
+                IsActive= true,
             });
         }
     }
